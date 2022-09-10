@@ -1,0 +1,14 @@
+{
+    "compilerOptions": {
+        "baseUrl": "./",
+        "paths": {
+            "@/*": [
+                "resources/inertiajs/*"
+            ]
+        }
+    },
+    "exclude": [
+        "node_modules",
+        "public/**/*",
+    ]
+}

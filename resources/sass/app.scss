@@ -1,0 +1,18 @@
+// Fonts
+@import url('https://fonts.googleapis.com/css?family=Nunito');
+
+// Variables
+@import 'variables';
+
+// Bootstrap
+@import '~bootstrap/scss/bootstrap';
+
+// Coreui
+@import "~@coreui/coreui/scss/coreui";
+
+// Custom Frontend Styles
+.is-invalid {
+    color: #ff0000;
+    font-size: 12px;
+    margin-top: 4px;
+}
