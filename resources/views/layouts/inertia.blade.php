@@ -19,14 +19,12 @@
     <!-- styles -->
     <link href="{{ asset(mix('css/app.css')) }}" rel="stylesheet">
 
-    <link rel="stylesheet" href="{{ asset('vendor/datatables.net/datatables.min.css') }}" />
-
     <!-- inertia scripts -->
     @inertiaHead
 
     <!-- scripts -->
-    <script src="{{ asset(mix('js/app.js')) }}"></script>
-    <script src="{{ asset('vendor/datatables.net/datatables.min.js') }}"></script>
+    <script src="{{ asset(mix('js/app.js')) }}" defer></script>
+    <script src="{{ asset(mix('js/vendor.js')) }}" defer></script>
 
     @if ($print ?? false)
         <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
@@ -37,31 +35,32 @@
 
 </head>
 
-<body class="app header-fixed sidebar-fixed aside-menu-off-canvas sidebar-lg-show">
+<body id="page-top">
 
-    <!-- header -->
-    @include('partials.app.header')
+    <!-- Page Wrapper -->
+    <div id="wrapper">
 
-    <div class="app-body">
+    @include('partials.sidebar');
 
-        <!-- side bar -->
-        @include('partials.app.sidebar')
+    <!-- Content Wrapper -->
+    <div id="content-wrapper" class="d-flex flex-column">
 
-        <!-- main content -->
-        <main class="main">
+        <!-- Main Content -->
+        <div id="content">
 
-            <!-- content -->
+            @include('partials.topbar')
+
+            <!-- Begin Page Content -->
             <div class="container-fluid">
-                <div class="animated fadeIn">
-					<div class="mt-3">
-						@include('partials.messages')
-						@inertia
-                    </div>
-                </div>
-            </div>
-        </main>
 
-    </div>
+                @include('partials.messages')
+                @inertia
+
+            </div>
+            <!-- /.container-fluid -->
+
+        </div>
+        <!-- End of Main Content -->
 
 </body>
 

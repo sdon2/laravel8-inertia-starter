@@ -1,5 +1,6 @@
 {
-    "/js/app.js": "/js/app.js?id=b09d7daf4049575c6de5e9586a7ad12a",
-    "/css/app.css": "/css/app.css?id=b4e1d47500c5e83395373fa3f1b4e8b4",
-    "/js/inertia.js": "/js/inertia.js?id=3eefa0465e73fd8912a424bd3a8b81c7"
+    "/js/app.js": "/js/app.js?id=6799f74325d7285901156ab2d52b54a9",
+    "/css/app.css": "/css/app.css?id=7b0fb6c513cdc682149e771a92affc45",
+    "/js/vendor.js": "/js/vendor.js?id=95836ce01991befa35be5bbd506ac8a0",
+    "/js/inertia.js": "/js/inertia.js?id=b5c04d59f02e603229a6763024cbceab"
 }

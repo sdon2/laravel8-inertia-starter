@@ -11,7 +11,8 @@
     <title>@yield('title', config('app.name', 'Laravel'))</title>
 
     <!-- Scripts -->
-    <script src="{{ asset(mix('js/app.js')) }}" defer></script>
+    <script src="{{ asset(mix('js/app.js')) }}"></script>
+    <script src="{{ asset(mix('js/vendor.js')) }}"></script>
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
@@ -20,34 +21,23 @@
     <!-- Styles -->
     <link href="{{ asset(mix('css/app.css')) }}" rel="stylesheet">
 
-    <style>
-        body {
-            background-image: url('{{ url('images/login-bg.jpg') }}');
-            background-size: cover;
-            width: 100%;
-            height: 100%;
-            z-index: -1;
-        }
-    </style>
-
     @yield('styles')
 
 </head>
 
-<body>
-
-    <body>
-        <div id="app">
-            <div class="container" class="mx-auto my-2">
-                <div class="row justify-content-center" style="margin-top:15%">
-                    <div class="col col-sm-8">
+<body class="bg-gradient-primary">
+    <div id="app" class="container">
+        <div class="row justify-content-center">
+            <div class="col-xl-10 col-lg-12 col-md-9">
+                <div class="card o-hidden border-0 shadow-lg my-5">
+                    <div class="card-body p-0">
                         @include('partials.messages')
+                        @yield('content')
                     </div>
-                    @yield('content')
                 </div>
-            </div><!-- container -->
-        </div><!-- #app -->
-    </body>
+            </div>
+        </div>
+    </div><!-- #app container -->
 </body>
 
 </html>

@@ -3,63 +3,45 @@
 @section('title', 'Login')
 
 @section('content')
-    <div class="col col-sm-8 align-self-center">
-        <div class="card">
-
-            <div class="card-header px-4 py-3">
-                <strong>{{ config('app.name') }}</strong>
-            </div>
-
-            <div class="card-body p-4">
-                <form action="{{ route('login') }}" method="POST">
+    <div class="row">
+        <div class="col-lg-6 d-none d-lg-block bg-login-image"></div>
+        <div class="col-lg-6">
+            <div class="p-5">
+                <div class="text-center">
+                    <h1 class="h4 text-gray-900 mb-4">Welcome Back!</h1>
+                </div>
+                <form class="user" action="{{ route('login') }}" method="POST">
                     @csrf
-                    <div class="row">
-                        <div class="col">
-                            <div class="form-group">
-                                <label class="form-label">Email</label>
-                                <input type="text" name="email" class="form-control" placeholder="Your email address"
-                                    value="{{ old('email') }}" required autofocus>
-                                @error('email')
-                                    <div class="is-invalid">{{ $message }}</div>
-                                @enderror
-                            </div>
+                    <div class="form-group">
+                        <input type="email" name="email" class="form-control form-control-user"
+                            placeholder="Enter Email Address..." value="{{ old('email') }}" required autofocus>
+                        @error('email')
+                            <div class="invalid-feedback">{{ $message }}</div>
+                        @enderror
+                    </div>
+                    <div class="form-group">
+                        <input type="password" name="password" class="form-control form-control-user"
+                            placeholder="Password">
+                    </div>
+                    <div class="form-group">
+                        <div class="custom-control custom-checkbox small">
+                            <input type="checkbox" class="custom-control-input" name="remember" id="customCheck"
+                                value="1" {{ old('remember', 0) ? 'checked' : '' }}>
+                            <label class="custom-control-label" for="customCheck">Remember
+                                Me</label>
                         </div>
                     </div>
-
-                    <div class="row">
-                        <div class="col">
-                            <div class="form-group">
-                                <label class="form-label">Password</label>
-                                <input type="password" name="password" class="form-control" placeholder="Password" required>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="row">
-                        <div class="col">
-                            <div class="form-group">
-                                <label class="form-label">
-                                    <input type="checkbox" name="remember" value="1"
-                                        {{ old('remember', 0) ? 'checked' : '' }}>
-                                    Remember Me
-                                </label>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="d-flex justify-content-between mt-2">
-                        <div class="form-group">
-                            <button type="submit" class="btn btn-success btn-lg" style="font-size: inherit">
-                                Login
-                            </button>
-                        </div>
-                        <div class="form-group">
-                            <a href="{{ route('password.request') }}">
-                                Forgot Password?
-                            </a>
-                        </div>
-                    </div>
+                    <button type="submit" class="btn btn-primary btn-user btn-block">
+                        Login
+                    </button>
                 </form>
+                <hr>
+                <div class="text-center">
+                    <a class="small" href="{{ route('password.request') }}">Forgot Password?</a>
+                </div>
+                <div class="text-center">
+                    <a class="small" href="{{ route('register') }}">Create an Account!</a>
+                </div>
             </div>
         </div>
     </div>

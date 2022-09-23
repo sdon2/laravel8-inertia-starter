@@ -24,5 +24,10 @@ Auth::routes();
 
 Route::middleware(['auth'])->group(function () {
     // Dashboard
-    Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');    
+    Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
+
+    // Datatable
+    Route::get('/table', function () {
+        return \Inertia\Inertia::render('Table');
+    })->name('tables');
 });
