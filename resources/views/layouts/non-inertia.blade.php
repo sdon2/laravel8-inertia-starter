@@ -19,9 +19,6 @@
     <!-- styles -->
     <link href="{{ asset(mix('css/app.css')) }}" rel="stylesheet">
 
-    <!-- inertia scripts -->
-    @inertiaHead
-
     <!-- scripts -->
     <script src="{{ asset(mix('js/app.js')) }}" defer></script>
     <script src="{{ asset(mix('js/vendor.js')) }}" defer></script>
@@ -30,8 +27,7 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
     @endif
 
-    @routes
-    <script src="{{ asset(mix('js/inertia.js')) }}" defer></script>
+    @yield('styles')
 
 </head>
 
@@ -54,13 +50,16 @@
             <div class="container-fluid">
 
                 @include('partials.messages')
-                @inertia
+
+                @yield('content')
 
             </div>
             <!-- /.container-fluid -->
 
         </div>
         <!-- End of Main Content -->
+
+        @yield('scripts')
 
 </body>
 
