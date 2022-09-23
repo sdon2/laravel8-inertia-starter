@@ -10,6 +10,8 @@
 
     <meta name="app_name" content="{{ config('app.name') }}">
 
+    <title>{{ config('app.name') }} | @yield('title', 'App')</title>
+
     <!-- fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
@@ -58,6 +60,10 @@
 
         </div>
         <!-- End of Main Content -->
+
+        <form id="logoutForm" action="{{ route('logout') }}" method="POST">
+            @csrf
+        </form>
 
         @yield('scripts')
 

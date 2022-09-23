@@ -7,6 +7,13 @@ if (!function_exists('active_class')) {
     }
 }
 
+if (!function_exists('inactive_class')) {
+    function inactive_class($route, $inActiveClass = 'inactive')
+    {
+        return request()->routeIs($route) ? '' : $inActiveClass;
+    }
+}
+
 if (!function_exists('amount_to_words')) {
     function amount_to_words($number)
     {

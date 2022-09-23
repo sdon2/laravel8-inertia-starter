@@ -62,6 +62,10 @@
         </div>
         <!-- End of Main Content -->
 
+        <form id="logoutForm" action="{{ route('logout') }}" method="POST">
+            @csrf
+        </form>
+
 </body>
 
 </html>

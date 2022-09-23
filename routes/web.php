@@ -29,5 +29,5 @@ Route::middleware(['auth'])->group(function () {
     // Datatable
     Route::get('/table', function () {
         return \Inertia\Inertia::render('Table');
-    })->name('tables');
+    })->name('table');
 });
